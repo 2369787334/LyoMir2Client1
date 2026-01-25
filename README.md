@@ -12,7 +12,9 @@
 </br>
 </br>
 
-<img src='https://github.com/AndrewChien/Blog/blob/master/source/lyom2.png'/></br>
+<img src='https://github.com/AndrewChien/Blog/blob/master/source/lyom2-1.png'/></br>
+<img src='https://github.com/AndrewChien/Blog/blob/master/source/lyom2-2.png'/></br>
+<img src='https://github.com/AndrewChien/Blog/blob/master/source/lyom2-3.png'/></br>
 ---
 
 # 群服及技术交流
