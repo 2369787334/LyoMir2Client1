@@ -1,0 +1,10 @@
+using System.Runtime.InteropServices;
+
+namespace MirClient.Protocol.Packets;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public struct VenationInfo
+{
+    public byte Level;
+    public byte Point;
+}
