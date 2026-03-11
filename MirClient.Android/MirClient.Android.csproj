@@ -1,0 +1,52 @@
+<!-- 传奇手机端 Android 项目文件 -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- 目标框架：Android -->
+    <TargetFramework>net8.0-android</TargetFramework>
+    <RootNamespace>MirClient.Android</RootNamespace>
+    <ApplicationId>com.lyomir2.client.android</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- MAUI 标志 -->
+    <UseMaui>true</UseMaui>
+    <OutputType>Exe</OutputType>
+    <SingleProject>true</SingleProject>
+  </PropertyGroup>
+
+  <!-- NuGet 包依赖 -->
+  <ItemGroup>
+    <!-- MAUI 核心控件 -->
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
+    <!-- SkiaSharp 渲染（替代 Direct3D11） -->
+    <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
+    <!-- 音频播放（替代 DirectSound） -->
+    <PackageReference Include="Plugin.Maui.Audio" Version="3.0.0" />
+  </ItemGroup>
+
+  <!-- 引用可复用的跨平台项目 -->
+  <ItemGroup>
+    <ProjectReference Include="..\MirClient.Core\MirClient.Core.csproj" />
+    <ProjectReference Include="..\MirClient.Net\MirClient.Net.csproj" />
+    <ProjectReference Include="..\MirClient.Protocol\MirClient.Protocol.csproj" />
+    <ProjectReference Include="..\MirClient.Assets\MirClient.Assets.csproj" />
+  </ItemGroup>
+
+  <!-- MAUI 资源文件 -->
+  <ItemGroup>
+    <!-- 应用图标 -->
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+    <!-- 启动画面 -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    <!-- 字体资源 -->
+    <MauiFont Include="Resources\Fonts\*" />
+    <!-- 图片资源 -->
+    <MauiImage Include="Resources\Images\*" />
+    <!-- 原始资源 -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>
