@@ -1,3 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- 目标框架：Android平台 -->
+    <TargetFramework>net8.0-android</TargetFramework>
+    <RootNamespace>MirClient.Android</RootNamespace>
+    <ApplicationId>com.lyomir2.client</ApplicationId>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <AndroidSigningKeyStore></AndroidSigningKeyStore>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 应用图标资源 -->
+    <MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+    <!-- 启动画面资源 -->
+    <MauiSplashScreen Include="Resources\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    <!-- 图片资源 -->
+    <MauiImage Include="Resources\Images\*" />
+    <!-- 字体资源 -->
+    <MauiFont Include="Resources\Fonts\*" />
+    <!-- 原始资源 -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- NuGet 包引用 -->
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.100" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+    <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 项目引用：只引用跨平台的纯.NET库 -->
 <!-- 传奇手机端 Android 项目文件 -->
 <Project Sdk="Microsoft.NET.Sdk">
 

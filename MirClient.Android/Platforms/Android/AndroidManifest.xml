@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/appicon"
+        android:roundIcon="@mipmap/appicon_round"
+        android:supportsRtl="true"
+        android:label="烈焰传奇">
+        <activity android:exported="true"
+                  android:name="com.lyomir2.client.MainActivity"
+                  android:screenOrientation="landscape">
+        </activity>
+    </application>
+
+    <!-- 网络访问权限（HTTP下载资源文件） -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+        外部存储权限说明：
+        - Android 10+（API 29+）：使用 GetExternalFilesDir() 无需存储权限
+        - Android 9 及以下：需要 WRITE_EXTERNAL_STORAGE
+        - 仅为兼容旧设备保留，maxSdkVersion 限制避免影响新设备
+    -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+
+    <!-- 网络状态权限（检查网络连接） -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 设备要求 -->
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+</manifest>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MirClient.Android.Pages.LoadingPage"
+             BackgroundColor="#1a1a2e"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="*, Auto, Auto, Auto, Auto, Auto, Auto"
+          Padding="40,60,40,60">
+
+        <!-- 游戏 Logo 占位区域 -->
+        <Image Grid.Row="0"
+               HeightRequest="180"
+               WidthRequest="320"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Aspect="AspectFit">
+            <Image.Source>
+                <FontImageSource FontFamily="OpenSansRegular"
+                                 Glyph="&#x2694;"
+                                 Color="White"
+                                 Size="120" />
+            </Image.Source>
+        </Image>
+
+        <!-- 标题文字 -->
+        <Label Grid.Row="1"
+               Text="烈焰传奇"
+               FontSize="32"
+               FontAttributes="Bold"
+               TextColor="#e8c170"
+               HorizontalOptions="Center"
+               Margin="0,0,0,8" />
+
+        <Label Grid.Row="2"
+               Text="LyoMir2"
+               FontSize="16"
+               TextColor="#8888aa"
+               HorizontalOptions="Center"
+               Margin="0,0,0,40" />
+
+        <!-- 当前下载文件名 -->
+        <Label x:Name="FileNameLabel"
+               Grid.Row="3"
+               Text="正在准备..."
+               FontSize="14"
+               TextColor="#ccccdd"
+               HorizontalOptions="Center"
+               Margin="0,0,0,12" />
+
+        <!-- 进度条 -->
+        <ProgressBar x:Name="DownloadProgressBar"
+                     Grid.Row="4"
+                     Progress="0"
+                     ProgressColor="#e8c170"
+                     BackgroundColor="#333355"
+                     HeightRequest="6"
+                     Margin="0,0,0,8" />
+
+        <!-- 进度百分比和下载速度 -->
+        <Grid Grid.Row="5"
+              ColumnDefinitions="*, Auto"
+              Margin="0,0,0,20">
+            <Label x:Name="ProgressLabel"
+                   Grid.Column="0"
+                   Text="0%"
+                   FontSize="13"
+                   TextColor="#aaaacc" />
+            <Label x:Name="SpeedLabel"
+                   Grid.Column="1"
+                   Text=""
+                   FontSize="13"
+                   TextColor="#aaaacc"
+                   HorizontalOptions="End" />
+        </Grid>
+
+        <!-- 跳过按钮（仅在有本地缓存时显示） -->
+        <Button x:Name="SkipButton"
+                Grid.Row="6"
+                Text="跳过（使用本地缓存）"
+                FontSize="14"
+                TextColor="#ccccdd"
+                BackgroundColor="Transparent"
+                BorderColor="#555577"
+                BorderWidth="1"
+                CornerRadius="4"
+                IsVisible="False"
+                Clicked="OnSkipClicked" />
+
+    </Grid>
+
+</ContentPage>

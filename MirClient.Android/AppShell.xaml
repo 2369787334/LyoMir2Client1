@@ -4,6 +4,14 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:pages="clr-namespace:MirClient.Android.Pages"
        x:Class="MirClient.Android.AppShell"
+       Shell.FlyoutBehavior="Disabled">
+
+    <!-- 启动流程：LoadingPage → LoginPage → GamePage -->
+    <ShellContent
+        Title="加载中"
+        ContentTemplate="{DataTemplate pages:LoadingPage}"
+        Route="LoadingPage" />
+
        Shell.NavBarIsVisible="False"
        BackgroundColor="#1A1A2E">
 
@@ -12,5 +20,15 @@
         Title="登录"
         ContentTemplate="{DataTemplate pages:LoginPage}"
         Route="LoginPage" />
+
+    <ShellContent
+        Title="游戏"
+        ContentTemplate="{DataTemplate pages:GamePage}"
+        Route="GamePage" />
+
+    <ShellContent
+        Title="设置"
+        ContentTemplate="{DataTemplate pages:SettingsPage}"
+        Route="SettingsPage" />
 
 </Shell>

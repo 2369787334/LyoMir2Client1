@@ -1,4 +1,111 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MirClient.Android.Pages.LoginPage"
+             BackgroundColor="#1a1a2e"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              Padding="40,60,40,40">
+
+            <!-- 游戏标题 -->
+            <Label Grid.Row="0"
+                   Text="烈焰传奇"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   TextColor="#e8c170"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,8" />
+
+            <Label Grid.Row="1"
+                   Text="LyoMir2 Mobile"
+                   FontSize="14"
+                   TextColor="#8888aa"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,50" />
+
+            <!-- 服务器地址输入框 -->
+            <Border Grid.Row="2"
+                    BackgroundColor="#252540"
+                    Stroke="#444466"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 6"
+                    Margin="0,0,0,16">
+                <Entry x:Name="ServerEntry"
+                       Placeholder="游戏服务器地址（IP:端口）"
+                       PlaceholderColor="#666688"
+                       TextColor="White"
+                       BackgroundColor="Transparent"
+                       Keyboard="Url"
+                       Margin="12,8" />
+            </Border>
+
+            <!-- 账号输入框 -->
+            <Border Grid.Row="3"
+                    BackgroundColor="#252540"
+                    Stroke="#444466"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 6"
+                    Margin="0,0,0,16">
+                <Entry x:Name="AccountEntry"
+                       Placeholder="账号"
+                       PlaceholderColor="#666688"
+                       TextColor="White"
+                       BackgroundColor="Transparent"
+                       Margin="12,8" />
+            </Border>
+
+            <!-- 密码输入框 -->
+            <Border Grid.Row="4"
+                    BackgroundColor="#252540"
+                    Stroke="#444466"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 6"
+                    Margin="0,0,0,24">
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="密码"
+                       PlaceholderColor="#666688"
+                       TextColor="White"
+                       BackgroundColor="Transparent"
+                       IsPassword="True"
+                       Margin="12,8" />
+            </Border>
+
+            <!-- 登录按钮 -->
+            <Button Grid.Row="5"
+                    Text="登  录"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="#1a1a2e"
+                    BackgroundColor="#e8c170"
+                    CornerRadius="6"
+                    HeightRequest="48"
+                    Margin="0,0,0,12"
+                    Clicked="OnLoginClicked" />
+
+            <!-- 设置按钮 -->
+            <Button Grid.Row="6"
+                    Text="资源服务器设置"
+                    FontSize="14"
+                    TextColor="#aaaacc"
+                    BackgroundColor="Transparent"
+                    BorderColor="#444466"
+                    BorderWidth="1"
+                    CornerRadius="6"
+                    HeightRequest="42"
+                    Margin="0,0,0,16"
+                    Clicked="OnSettingsClicked" />
+
+            <!-- 状态标签 -->
+            <Label x:Name="StatusLabel"
+                   Grid.Row="7"
+                   Text=""
+                   FontSize="13"
+                   TextColor="#ee6666"
+                   HorizontalOptions="Center" />
+
+        </Grid>
 <!-- 传奇手机端登录页面 -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
