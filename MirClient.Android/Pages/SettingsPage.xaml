@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MirClient.Android.Pages.SettingsPage"
+             BackgroundColor="#1a1a2e"
+             Title="设置">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,20" Spacing="0">
+
+            <!-- 资源服务器设置分组 -->
+            <Label Text="资源服务器"
+                   FontSize="13"
+                   TextColor="#8888aa"
+                   Margin="4,0,0,8" />
+
+            <Border BackgroundColor="#252540"
+                    Stroke="#444466"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    Margin="0,0,0,24"
+                    Padding="16">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="资源服务器地址"
+                           FontSize="14"
+                           TextColor="#ccccdd" />
+
+                    <Entry x:Name="AssetServerEntry"
+                           Placeholder="http://your-server.com/mir2/"
+                           PlaceholderColor="#666688"
+                           TextColor="White"
+                           BackgroundColor="#1a1a2e"
+                           Keyboard="Url" />
+
+                    <Label Text="用于按需下载游戏资源文件（图片、地图等）"
+                           FontSize="12"
+                           TextColor="#666688" />
+
+                    <Button Text="保存服务器地址"
+                            TextColor="#e8c170"
+                            BackgroundColor="Transparent"
+                            BorderColor="#e8c170"
+                            BorderWidth="1"
+                            CornerRadius="4"
+                            HeightRequest="40"
+                            Clicked="OnSaveServerClicked" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 缓存管理分组 -->
+            <Label Text="本地缓存"
+                   FontSize="13"
+                   TextColor="#8888aa"
+                   Margin="4,0,0,8" />
+
+            <Border BackgroundColor="#252540"
+                    Stroke="#444466"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    Margin="0,0,0,24"
+                    Padding="16">
+                <VerticalStackLayout Spacing="12">
+
+                    <!-- 缓存大小显示 -->
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0"
+                               Text="当前缓存大小"
+                               FontSize="14"
+                               TextColor="#ccccdd"
+                               VerticalOptions="Center" />
+                        <Label x:Name="CacheSizeLabel"
+                               Grid.Column="1"
+                               Text="计算中..."
+                               FontSize="14"
+                               TextColor="#aaaacc"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center" />
+                    </Grid>
+
+                    <!-- 缓存目录路径 -->
+                    <Label x:Name="CacheDirLabel"
+                           FontSize="11"
+                           TextColor="#666688"
+                           LineBreakMode="WordWrap" />
+
+                    <Button Text="清理缓存"
+                            TextColor="#ee6666"
+                            BackgroundColor="Transparent"
+                            BorderColor="#ee6666"
+                            BorderWidth="1"
+                            CornerRadius="4"
+                            HeightRequest="40"
+                            Clicked="OnClearCacheClicked" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- 版本信息分组 -->
+            <Label Text="关于"
+                   FontSize="13"
+                   TextColor="#8888aa"
+                   Margin="4,0,0,8" />
+
+            <Border BackgroundColor="#252540"
+                    Stroke="#444466"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    Margin="0,0,0,24"
+                    Padding="16">
+                <VerticalStackLayout Spacing="8">
+
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0" Text="版本" FontSize="14" TextColor="#ccccdd" />
+                        <Label Grid.Column="1" Text="1.0.0" FontSize="14" TextColor="#aaaacc" HorizontalOptions="End" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0" Text="项目" FontSize="14" TextColor="#ccccdd" />
+                        <Label Grid.Column="1" Text="LyoMir2 Mobile" FontSize="14" TextColor="#aaaacc" HorizontalOptions="End" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0" Text="基础框架" FontSize="14" TextColor="#ccccdd" />
+                        <Label Grid.Column="1" Text=".NET 8 MAUI" FontSize="14" TextColor="#aaaacc" HorizontalOptions="End" />
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
