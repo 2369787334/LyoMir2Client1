@@ -106,6 +106,93 @@
                    HorizontalOptions="Center" />
 
         </Grid>
+<!-- 传奇手机端登录页面 -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MirClient.Android.Pages.LoginPage"
+             Title="热血传奇"
+             BackgroundColor="#16213E">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="40,60,40,40"
+            Spacing="16"
+            VerticalOptions="Center">
+
+            <!-- 游戏标题 -->
+            <Label
+                Text="热血传奇"
+                FontSize="36"
+                FontAttributes="Bold"
+                TextColor="#E94560"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20" />
+
+            <Label
+                Text="盛大版手机客户端"
+                FontSize="14"
+                TextColor="#AAAAAA"
+                HorizontalOptions="Center"
+                Margin="0,0,0,30" />
+
+            <!-- 服务器地址输入框 -->
+            <Label Text="服务器地址" TextColor="#EAEAEA" FontSize="14" />
+            <Entry
+                x:Name="EntryServer"
+                Placeholder="例如：192.168.1.1:7000"
+                Text="192.168.1.1:7000"
+                PlaceholderColor="#666666"
+                TextColor="#EAEAEA"
+                BackgroundColor="#0F3460"
+                HeightRequest="48"
+                Keyboard="Default" />
+
+            <!-- 账号输入框 -->
+            <Label Text="账号" TextColor="#EAEAEA" FontSize="14" />
+            <Entry
+                x:Name="EntryUsername"
+                Placeholder="请输入账号"
+                PlaceholderColor="#666666"
+                TextColor="#EAEAEA"
+                BackgroundColor="#0F3460"
+                HeightRequest="48"
+                Keyboard="Default" />
+
+            <!-- 密码输入框 -->
+            <Label Text="密码" TextColor="#EAEAEA" FontSize="14" />
+            <Entry
+                x:Name="EntryPassword"
+                Placeholder="请输入密码"
+                PlaceholderColor="#666666"
+                TextColor="#EAEAEA"
+                BackgroundColor="#0F3460"
+                HeightRequest="48"
+                IsPassword="True" />
+
+            <!-- 登录按钮 -->
+            <Button
+                x:Name="BtnLogin"
+                Text="登 录"
+                BackgroundColor="#E94560"
+                TextColor="White"
+                FontSize="18"
+                FontAttributes="Bold"
+                HeightRequest="52"
+                CornerRadius="8"
+                Margin="0,16,0,0"
+                Clicked="OnLoginClicked" />
+
+            <!-- 状态提示标签 -->
+            <Label
+                x:Name="LabelStatus"
+                Text=""
+                TextColor="#FFD700"
+                FontSize="14"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Margin="0,8,0,0" />
+
+        </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>

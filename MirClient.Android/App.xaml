@@ -8,6 +8,18 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+<!-- 传奇手机端应用主文件 -->
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MirClient.Android"
+             x:Class="MirClient.Android.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- 应用全局主题色 -->
+            <Color x:Key="PrimaryColor">#1A1A2E</Color>
+            <Color x:Key="AccentColor">#E94560</Color>
+            <Color x:Key="BackgroundColor">#16213E</Color>
+            <Color x:Key="TextColor">#EAEAEA</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

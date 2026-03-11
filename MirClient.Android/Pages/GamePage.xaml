@@ -92,6 +92,129 @@
                     HeightRequest="60"
                     Pressed="OnSkillButtonPressed"
                     CommandParameter="4" />
+<!-- 传奇手机端游戏渲染页面 -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             xmlns:controls="clr-namespace:MirClient.Android.Controls"
+             x:Class="MirClient.Android.Pages.GamePage"
+             Title="游戏"
+             BackgroundColor="#000000"
+             Shell.NavBarIsVisible="False">
+
+    <!-- 游戏主容器，使用绝对布局叠加 HUD -->
+    <Grid RowDefinitions="*, Auto">
+
+        <!-- 游戏渲染画布（占据全屏） -->
+        <skia:SKCanvasView
+            x:Name="GameCanvas"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            BackgroundColor="Black"
+            PaintSurface="OnGameCanvasPaintSurface"
+            EnableTouchEvents="False" />
+
+        <!-- 底部 HUD 区域 -->
+        <Grid
+            Grid.Row="1"
+            HeightRequest="180"
+            BackgroundColor="#AA000000">
+
+            <Grid ColumnDefinitions="180, *, Auto">
+
+                <!-- 左侧虚拟摇杆区域 -->
+                <controls:VirtualJoystick
+                    x:Name="Joystick"
+                    Grid.Column="0"
+                    WidthRequest="160"
+                    HeightRequest="160"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    JoystickMoved="OnJoystickMoved" />
+
+                <!-- 中间空白区域（预留给状态栏） -->
+                <VerticalStackLayout
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                    <Label
+                        x:Name="LabelCoords"
+                        Text="坐标: (0, 0)"
+                        TextColor="#AAAAAA"
+                        FontSize="12"
+                        HorizontalOptions="Center" />
+                    <Label
+                        x:Name="LabelDirection"
+                        Text="方向: (0.00, 0.00)"
+                        TextColor="#AAAAAA"
+                        FontSize="12"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+                <!-- 右侧技能按钮区域 -->
+                <Grid
+                    Grid.Column="2"
+                    ColumnDefinitions="70,70"
+                    RowDefinitions="70,70"
+                    Margin="0,8,16,8"
+                    ColumnSpacing="8"
+                    RowSpacing="8">
+
+                    <!-- 技能1 -->
+                    <Button
+                        Grid.Row="0" Grid.Column="0"
+                        Text="技能1"
+                        BackgroundColor="#CC8B0000"
+                        TextColor="White"
+                        FontSize="13"
+                        FontAttributes="Bold"
+                        CornerRadius="35"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Clicked="OnSkill1Clicked" />
+
+                    <!-- 技能2 -->
+                    <Button
+                        Grid.Row="0" Grid.Column="1"
+                        Text="技能2"
+                        BackgroundColor="#CC00468B"
+                        TextColor="White"
+                        FontSize="13"
+                        FontAttributes="Bold"
+                        CornerRadius="35"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Clicked="OnSkill2Clicked" />
+
+                    <!-- 技能3 -->
+                    <Button
+                        Grid.Row="1" Grid.Column="0"
+                        Text="技能3"
+                        BackgroundColor="#CC006B3C"
+                        TextColor="White"
+                        FontSize="13"
+                        FontAttributes="Bold"
+                        CornerRadius="35"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Clicked="OnSkill3Clicked" />
+
+                    <!-- 技能4 -->
+                    <Button
+                        Grid.Row="1" Grid.Column="1"
+                        Text="技能4"
+                        BackgroundColor="#CC6B006B"
+                        TextColor="White"
+                        FontSize="13"
+                        FontAttributes="Bold"
+                        CornerRadius="35"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Clicked="OnSkill4Clicked" />
+
+                </Grid>
+
+            </Grid>
         </Grid>
 
     </Grid>
